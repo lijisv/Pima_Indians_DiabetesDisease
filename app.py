@@ -40,8 +40,10 @@ def predict():
         return render_template('result.html',pred=f'You have a chance of having diabetes.\n\nProbability of you being a diabetic is {valPred*100}%.\n\nAdvice : Exercise Regularly')
     else:
         valPred = round(prediction[0][0],3)
-        return render_template('result.html',pred=f'Congratulations!!!, You are in a Safe Zone.\n\n Probability of you being a non-diabetic is {prediction[0][0]*100}%.\n\n Advice : Exercise Regularly and maintain like this..!')
+
+        return render_template('result.html',pred=f'Congratulations!!!, You are in a Safe Zone.\n\n Probability of you being a non-diabetic is {valPred*100}%.\n\n Advice : Exercise Regularly and maintain like this..!')
     return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
